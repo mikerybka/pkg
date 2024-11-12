@@ -1,0 +1,6 @@
+package types
+{{ if eq .Kind "struct" }}
+type {{ pascalCase .ID }} struct {{"{"}}{{ range .Fields }}
+    {{ pascalCase .ID }} {{ golang .Type }} `json:"{{ snakeCase .ID }}"`{{ end }}
+}
+{{ end }}

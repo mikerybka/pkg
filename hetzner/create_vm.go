@@ -18,7 +18,7 @@ func CreateVM(name string) (*Server, error) {
 
 	b, _ := json.Marshal(CreateVMRequest{
 		Name:       name,
-		ServerType: "cpx11",
+		ServerType: "ccx13",
 		Image:      "ubuntu-24.04",
 		Location:   "ash",
 		SSHKeys:    sshKeys,

@@ -12,7 +12,8 @@ import (
 	"github.com/mikerybka/pkg/util"
 )
 
-func Deploy(adminPhone, floatingIP string) error {
+func Deploy(floatingIP string) error {
+	adminPhone := util.RequireEnvVar("ADMIN_PHONE")
 	// Notify the admin of the deploy
 	twilio.SendSMS(adminPhone, "Deployment started.")
 
